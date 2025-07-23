@@ -4,120 +4,378 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZooLife - Everything Your Animal Needs</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FFFDF5;
+            color: #1F2937;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #FFFDF5;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1F2937;
+        }
+        .hero {
+            background-image: url('placeholder-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #1F2937;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background: linear-gradient(to right, #34D399, #F97316);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin: 0 10px;
+        }
+        .categories {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .categories h2 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 30px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .category-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .category-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .category-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .category-card .label {
+            position: relative;
+            top: -30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+        .popular-products {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .popular-products h2 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 30px;
+        }
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .product-card {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .product-card p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .product-card .add-to-cart {
+            background: linear-gradient(to right, #34D399, #F97316);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        .why-zoolife {
+            padding: 50px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .why-zoolife .icon-list {
+            width: 40%;
+            padding: 20px;
+        }
+        .why-zoolife .icon-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .why-zoolife .icon-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .why-zoolife .icon-list li i {
+            margin-right: 10px;
+            color: #34D399;
+        }
+        .why-zoolife .image-container {
+            width: 40%;
+        }
+        .why-zoolife .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .testimonials {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 30px;
+        }
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+        }
+        .testimonial {
+            flex: 0 0 80%;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+        }
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .testimonial span {
+            font-style: italic;
+        }
+        .newsletter {
+            background-color: #e9f5f0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .newsletter h2 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+        }
+        .newsletter input[type="email"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        .newsletter button {
+            background: linear-gradient(to right, #34D399, #F97316);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        footer {
+            background-color: #1F2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+    </style>
 </head>
 <body>
     <header>
         <h1>ZooLife</h1>
+        <nav>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <h1>🦁 Welcome to ZooLife</h1>
-            <p>Your favorite zoo & exotic pet shop — delivered to your door.</p>
-            <a href="#" class="btn">🛒 Shop Now</a>
-            <a href="#" class="btn">📦 Explore Subscriptions</a>
-        </section>
+    <section class="hero">
+        <h1>🦁 Welcome to ZooLife</h1>
+        <p>Your favorite zoo & exotic pet shop — delivered to your door.</p>
+        <a href="#" class="cta-button">🛒 Shop Now</a>
+        <a href="#" class="cta-button">📦 Explore Subscriptions</a>
+    </section>
 
-        <section id="categories">
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
             <div class="category-card">
-                <img src="https://images.pexels.com/photos/158709/dog-puppy-dog-tired-158709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="For Dogs">
-                <div class="category-label">🐶 For Dogs</div>
+                <img src="placeholder-dog.jpg" alt="For Dogs">
+                <div class="label">🐶 For Dogs</div>
             </div>
             <div class="category-card">
-                <img src="https://images.pexels.com/photos/416482/pexels-photo-416482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="For Cats">
-                <div class="category-label">🐱 For Cats</div>
+                <img src="placeholder-cat.jpg" alt="For Cats">
+                <div class="label">🐱 For Cats</div>
             </div>
             <div class="category-card">
-                <img src="https://images.pexels.com/photos/158354/python-snake-reptile-head-158354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="For Reptiles">
-                <div class="category-label">🐍 For Reptiles</div>
+                <img src="placeholder-reptile.jpg" alt="For Reptiles">
+                <div class="label">🐍 For Reptiles</div>
             </div>
             <div class="category-card">
-                <img src="https://images.pexels.com/photos/46211/parrot-bird-colorful-ara-46211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="For Birds">
-                <div class="category-label">🦜 For Birds</div>
+                <img src="placeholder-bird.jpg" alt="For Birds">
+                <div class="label">🦜 For Birds</div>
             </div>
             <div class="category-card">
-                <img src="https://images.pexels.com/photos/977031/pexels-photo-977031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="For Fish">
-                <div class="category-label">🐠 For Fish</div>
+                <img src="placeholder-fish.jpg" alt="For Fish">
+                <div class="label">🐠 For Fish</div>
             </div>
              <div class="category-card">
-                <img src="https://images.pexels.com/photos/162240/elephant-africa-african-savanna-162240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Zoo Animals">
-                <div class="category-label">🐘 Zoo Animals</div>
+                <img src="placeholder-zoo.jpg" alt="Zoo Animals">
+                <div class="label">🐘 Zoo Animals</div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="popular-products">
+    <section class="popular-products">
+        <h2>Popular Products</h2>
+        <div class="product-list">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1559028184-9e63c284a435?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Exotic Fish Food">
+                <img src="placeholder-fishfood.jpg" alt="Exotic Fish Food">
                 <h3>Exotic Fish Food</h3>
-                <p>A nutritious blend for vibrant, healthy exotic fish.</p>
+                <p>Nutritious food for your exotic fish.</p>
                 <p>$19.99</p>
-                <button class="btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                <a href="#" class="add-to-cart">Add to Cart</a>
             </div>
-
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1624078281373-949860822c65?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Parrot Swing">
+                <img src="placeholder-parrotswing.jpg" alt="Parrot Swing">
                 <h3>Parrot Swing</h3>
-                <p>Durable and colorful swing for your feathered friend.</p>
+                <p>Fun and engaging swing for your parrot.</p>
                 <p>$24.99</p>
-                <button class="btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                <a href="#" class="add-to-cart">Add to Cart</a>
             </div>
-
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1591473369427-2659b2145244?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Reptile Heater">
+                <img src="placeholder-reptileheater.jpg" alt="Reptile Heater">
                 <h3>Reptile Heater</h3>
-                <p>Provides essential warmth for reptiles.</p>
+                <p>Keep your reptile warm and cozy.</p>
                 <p>$29.99</p>
-                <button class="btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                <a href="#" class="add-to-cart">Add to Cart</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="why-zoolife">
+    <section class="why-zoolife">
+        <div class="icon-list">
             <ul>
-                <li>🌱 Eco-friendly packaging</li>
-                <li>🚚 Free shipping on orders $50+</li>
-                <li>🧪 Vet-approved supplies</li>
-                <li>🐾 Care for domestic & exotic animals</li>
+                <li><i class="fas fa-leaf"></i> Eco-friendly packaging</li>
+                <li><i class="fas fa-truck"></i> Free shipping on orders $50+</li>
+                <li><i class="fas fa-flask"></i> Vet-approved supplies</li>
+                <li><i class="fas fa-paw"></i> Care for domestic & exotic animals</li>
             </ul>
-            <div class="image-container">
-                <img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Happy Customers">
-            </div>
-        </section>
+        </div>
+        <div class="image-container">
+            <img src="placeholder-happycustomers.jpg" alt="Happy Customers">
+        </div>
+    </section>
 
-        <section id="testimonials">
-            <div class="testimonial-carousel">
-                <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Testimonial 1">
-                    <p>"Our parrot loves the new perch — and delivery was super fast!"</p>
-                </div>
-                <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="Testimonial 2">
-                    <p>"ZooLife is the only place with supplies for my iguana!"</p>
-                </div>
-                <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Testimonial 3">
-                    <p>"Great selection of food and toys for my cat."</p>
-                </div>
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <img src="placeholder-parrotprofile.jpg" alt="Parrot Owner">
+                <p>"Our parrot loves the new perch — and delivery was super fast!"</p>
+                <span>- Jane Doe</span>
             </div>
-        </section>
+            <div class="testimonial">
+                <img src="placeholder-iguanaprofile.jpg" alt="Iguana Owner">
+                <p>"ZooLife is the only place with supplies for my iguana!"</p>
+                <span>- John Smith</span>
+            </div>
+             <div class="testimonial">
+                <img src="placeholder-dogprofile.jpg" alt="Dog Owner">
+                <p>"Great service and high-quality products. Highly recommend!"</p>
+                <span>- Alice Johnson</span>
+            </div>
+        </div>
+    </section>
 
-        <section id="newsletter">
-            <h2>📬 Subscribe for deals, new arrivals & animal care tips</h2>
-            <input type="email" placeholder="Enter email">
-            <button class="btn">Subscribe</button>
-        </section>
-    </main>
+    <section class="newsletter">
+        <h2>📬 Subscribe for deals, new arrivals & animal care tips</h2>
+        <input type="email" placeholder="Enter email">
+        <button>Subscribe</button>
+    </section>
 
     <footer>
-        <p>Links: <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">FAQs</a> | <a href="#">Returns</a> | <a href="#">Instagram</a></p>
-        <p>Payment badges: Visa, Mastercard, PayPal</p>
-        <p>&copy; 2024 ZooLife. All rights reserved.</p>
+        <p>
+            <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">FAQs</a> | <a href="#">Returns</a> | <a href="#">Instagram</a>
+        </p>
+        <p>
+            Payment badges: Visa, Mastercard, PayPal
+        </p>
+        <p>
+            Copyright © 2024 ZooLife
+        </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
