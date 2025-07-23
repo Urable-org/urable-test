@@ -12,6 +12,7 @@ header {
     color: white;
     text-align: center;
     padding: 1rem 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 main {
@@ -20,6 +21,10 @@ main {
 
 section {
     margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -27,6 +32,8 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem 0;
+    border-radius: 15px;
+    margin-top: 20px;
 }
 
 /* Hero Section */
@@ -34,20 +41,26 @@ footer {
     background-image: url('https://images.unsplash.com/photo-1614033374244-80135f229c25?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with actual image */
     background-size: cover;
     background-position: center;
-    color: #1F2937;
+    color: white;
     text-align: center;
     padding: 100px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #hero h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 3em;
     margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #hero p {
     font-size: 1.2em;
     margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000000;
 }
 
 .btn {
@@ -60,6 +73,13 @@ footer {
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
+    margin: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* Categories Section */
@@ -73,6 +93,13 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .category-card img {
@@ -80,10 +107,6 @@ footer {
     height: 200px;
     object-fit: cover;
     transition: transform 0.3s ease;
-}
-
-.category-card:hover img {
-    transform: scale(1.1);
 }
 
 .category-label {
@@ -95,6 +118,7 @@ footer {
     color: white;
     text-align: center;
     padding: 5px;
+    font-weight: bold;
 }
 
 /* Popular Products Section */
@@ -110,6 +134,13 @@ footer {
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
@@ -124,36 +155,74 @@ footer {
     display: flex;
     align-items: center;
     padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
 }
 
 #why-zoolife ul {
     list-style: none;
     padding: 0;
+    margin-right: 20px;
 }
 
 #why-zoolife li {
     margin-bottom: 10px;
+    font-weight: bold;
+    color: #34D399;
 }
 
 #why-zoolife .image-container img {
     width: 300px;
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Testimonials Section */
 #testimonials {
     text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 10px;
 }
 
 .testimonial-carousel {
-    /* Add carousel styling here */
+    padding: 20px;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 /* Newsletter Section */
 #newsletter {
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #FFFDF5;
     padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#newsletter h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #F97316;
+}
+
+#newsletter input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    width: 250px;
 }
 
 /* Footer */
@@ -162,4 +231,23 @@ footer {
     padding: 20px;
     background-color: #333;
     color: white;
+    border-radius: 15px;
+}
+
+footer a {
+    color: #34D399;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Paw print accents */
+body::before {
+    content: "\2665"; /* Unicode heart symbol (can be replaced with paw print) */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    color: #F97316;
+    opacity: 0.3;
+    pointer-events: none; /* Allows clicking through the icon */
 }
