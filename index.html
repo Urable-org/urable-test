@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urable - Automate your Jira tasks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Color Palette */
         :root {
@@ -23,6 +24,9 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -35,11 +39,22 @@
             color: var(--font-primary);
             font-weight: 700;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         p {
             color: var(--font-secondary);
-            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            color: var(--accent1);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #5ECEF4;
         }
 
         /* Hero Section */
@@ -47,51 +62,143 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 4rem 0;
+            padding: 6rem 0;
         }
 
         .hero-content {
             flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
         }
 
         .hero-visual {
             flex: 1;
-            /* Add visual elements here */
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Revenue Boost Section */
         .revenue-boost {
-            padding: 4rem 0;
+            padding: 5rem 0;
             text-align: center;
+            background-color: #1E293B;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .revenue-boost h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
         }
 
         .revenue-cards {
             display: flex;
             justify-content: space-around;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .revenue-card {
-            background-color: #1E293B;
-            padding: 2rem;
+            background-color: #2D3748;
+            padding: 2.5rem;
             border-radius: 0.5rem;
             width: 30%;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .revenue-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .revenue-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .revenue-card p {
+            font-size: 1rem;
         }
 
         /* Feature Section */
         .feature-section {
-            padding: 4rem 0;
+            padding: 5rem 0;
+        }
+
+        .feature-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         /* Pricing Section */
         .pricing-section {
-            padding: 4rem 0;
+            padding: 5rem 0;
+            background-color: #1E293B;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
         }
 
         /* Customer Logos Section */
         .customer-logos {
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .customer-logos h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-strip {
+            display: flex;
+            animation: scrollLogos 30s linear infinite;
+        }
+
+        .logo-strip img {
+            height: 40px;
+            margin: 0 2rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-strip img:hover {
+            opacity: 1;
+        }
+
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* Footer */
@@ -100,43 +207,166 @@
             padding: 2rem 0;
             text-align: center;
             color: var(--font-secondary);
+            font-size: 0.9rem;
         }
 
         /* Button Styles */
         .btn {
             background-color: var(--accent1);
             color: var(--font-primary);
-            padding: 1rem 2rem;
+            padding: 1.1rem 2.2rem;
             border: none;
             border-radius: 0.5rem;
             cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin: 0 0.5rem;
         }
 
         .btn:hover {
             background-color: #2563EB;
+            transform: translateY(-2px);
         }
 
-        /* Added basic responsive design */
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Glow Effect */
+        .glow {
+            text-shadow: 0 0 10px var(--accent1), 0 0 20px var(--accent2);
+        }
+
+        /* Animated Typing */
+        .typing-animation {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.3rem;
+            color: var(--highlight);
+            overflow: hidden;
+            border-right: .05em solid var(--highlight);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .05em;
+            animation:
+                typing 3.5s steps(40, end) infinite alternate, /* Adjust steps for speed */
+                blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--highlight); }
+        }
+
+        /* Toggle Switch */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .toggle-label {
+            margin-right: 1rem;
+            color: var(--font-secondary);
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #4B5563;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--accent1);
+        }
+
+        input:focus + .toggle-slider {
+            box-shadow: 0 0 3px var(--accent1);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
             }
+
             .hero {
                 flex-direction: column;
                 text-align: center;
             }
-            .hero-content, .hero-visual {
-                flex: none;
-                width: 100%;
+
+            .hero-content {
+                padding-right: 0;
             }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-visual {
+                margin-top: 2rem;
+            }
+
             .revenue-cards {
                 flex-direction: column;
             }
+
             .revenue-card {
                 width: 100%;
                 margin-bottom: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 1rem 2rem;
             }
         }
     </style>
@@ -149,30 +379,41 @@
 
         <section class="hero">
             <div class="hero-content">
-                <h2>🧠 Urable reads your Jira tasks and pushes production-ready code</h2>
+                <h2 class="glow">🧠 Urable reads your Jira tasks and pushes production-ready code</h2>
                 <p>From ticket to tested pull request in minutes. Automate grunt work, ship faster, scale smarter.</p>
+                <p class="typing-animation">git commit -m "feat: automate PR creation with Urable"</p>
                 <button class="btn">🚀 Start Free Trial</button>
                 <button class="btn">📅 Schedule a Demo</button>
             </div>
             <div class="hero-visual">
-                <!-- Terminal code + animated PR diff view -->
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/pr-flow.png" alt="PR Flow">
             </div>
         </section>
 
         <section class="revenue-boost">
             <h2>Scale Output. Reduce Spend. Increase Revenue.</h2>
+            <div class="toggle-container">
+                <span class="toggle-label">🧪 See how Urable impacts Series A vs. Enterprise teams</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="teamTypeToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
             <div class="revenue-cards">
                 <div class="revenue-card">
                     <h3>📈 +42% Engineering Output</h3>
                     <p>Automated PR creation frees up dev time</p>
+                    <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/output-graph.svg" alt="Engineering Output">
                 </div>
                 <div class="revenue-card">
                     <h3>💰 −65% Engineering Cost per Feature</h3>
                     <p>$ saved via automation</p>
+                    <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/cost-graph.svg" alt="Cost per Feature">
                 </div>
                 <div class="revenue-card">
                     <h3>📊 +18% Faster Release Velocity</h3>
                     <p>From weeks to days – fewer blockers & context switching</p>
+                    <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/velocity-graph.svg" alt="Release Velocity">
                 </div>
             </div>
         </section>
@@ -189,12 +430,44 @@
 
         <section class="customer-logos">
             <h2>Customer Logos</h2>
-            <!-- Add customer logos here -->
+            <div class="logo-strip">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo1.png" alt="Logo 1">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo2.png" alt="Logo 2">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo3.png" alt="Logo 3">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo4.png" alt="Logo 4">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo5.png" alt="Logo 5">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo1.png" alt="Logo 1">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo2.png" alt="Logo 2">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo3.png" alt="Logo 3">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo4.png" alt="Logo 4">
+                <img src="https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/logo5.png" alt="Logo 5">
+            </div>
         </section>
 
         <footer>
             <p>&copy; 2024 Urable</p>
         </footer>
     </div>
+
+    <script>
+        const toggleSwitch = document.getElementById('teamTypeToggle');
+        const outputGraph = document.querySelector(".revenue-cards > div:nth-child(1) > img")
+        const costGraph = document.querySelector(".revenue-cards > div:nth-child(2) > img")
+        const velocityGraph = document.querySelector(".revenue-cards > div:nth-child(3) > img")
+
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                // Enterprise Data
+                outputGraph.src = "https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/output-graph-enterprise.svg";
+                costGraph.src = "https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/cost-graph-enterprise.svg";
+                velocityGraph.src = "https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/velocity-graph-enterprise.svg";
+            } else {
+                // Series A Data
+                outputGraph.src = "https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/output-graph.svg";
+                costGraph.src = "https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/cost-graph.svg";
+                velocityGraph.src = "https://raw.githubusercontent.com/andrei-chivu/urable-test/landing-page-dev/assets/velocity-graph.svg";
+            }
+        });
+    </script>
 </body>
 </html>
