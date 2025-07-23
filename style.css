@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFDF5;
+    color: #1F2937;
+}
+
+header {
+    background-color: #34D399;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #F97316;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('https://images.unsplash.com/photo-1614033374244-80135f229c25?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with actual image */
+    background-size: cover;
+    background-position: center;
+    color: #1F2937;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-image: linear-gradient(to right, #34D399, #F97316);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Categories Section */
+#categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Popular Products Section */
+#popular-products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Why ZooLife Section */
+#why-zoolife {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+#why-zoolife ul {
+    list-style: none;
+    padding: 0;
+}
+
+#why-zoolife li {
+    margin-bottom: 10px;
+}
+
+#why-zoolife .image-container img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* Testimonials Section */
+#testimonials {
+    text-align: center;
+}
+
+.testimonial-carousel {
+    /* Add carousel styling here */
+}
+
+/* Newsletter Section */
+#newsletter {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 30px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
