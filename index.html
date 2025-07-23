@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urable - Automate your Jira tasks</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --background: #0F172A;
+            --accent1: #3B82F6;
+            --accent2: #9333EA;
+            --highlight: #10B981;
+            --font-primary: #E2E8F0;
+            --font-secondary: #CBD5E0;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--font-primary);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--font-primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--font-secondary);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-visual {
+            flex: 1;
+            /* Add visual elements here */
+        }
+
+        /* Revenue Boost Section */
+        .revenue-boost {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .revenue-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .revenue-card {
+            background-color: #1E293B;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            width: 30%;
+        }
+
+        /* Feature Section */
+        .feature-section {
+            padding: 4rem 0;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 4rem 0;
+        }
+
+        /* Customer Logos Section */
+        .customer-logos {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1E293B;
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--font-secondary);
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: var(--accent1);
+            color: var(--font-primary);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2563EB;
+        }
+
+        /* Added basic responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content, .hero-visual {
+                flex: none;
+                width: 100%;
+            }
+            .revenue-cards {
+                flex-direction: column;
+            }
+            .revenue-card {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Urable</h1>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2>🧠 Urable reads your Jira tasks and pushes production-ready code</h2>
+                <p>From ticket to tested pull request in minutes. Automate grunt work, ship faster, scale smarter.</p>
+                <button class="btn">🚀 Start Free Trial</button>
+                <button class="btn">📅 Schedule a Demo</button>
+            </div>
+            <div class="hero-visual">
+                <!-- Terminal code + animated PR diff view -->
+            </div>
+        </section>
+
+        <section class="revenue-boost">
+            <h2>Scale Output. Reduce Spend. Increase Revenue.</h2>
+            <div class="revenue-cards">
+                <div class="revenue-card">
+                    <h3>📈 +42% Engineering Output</h3>
+                    <p>Automated PR creation frees up dev time</p>
+                </div>
+                <div class="revenue-card">
+                    <h3>💰 −65% Engineering Cost per Feature</h3>
+                    <p>$ saved via automation</p>
+                </div>
+                <div class="revenue-card">
+                    <h3>📊 +18% Faster Release Velocity</h3>
+                    <p>From weeks to days – fewer blockers & context switching</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-section">
+            <h2>Features</h2>
+            <!-- Add features here -->
+        </section>
+
+        <section class="pricing-section">
+            <h2>Pricing</h2>
+            <!-- Add pricing table here -->
+        </section>
+
+        <section class="customer-logos">
+            <h2>Customer Logos</h2>
+            <!-- Add customer logos here -->
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Urable</p>
+        </footer>
+    </div>
+</body>
+</html>
