@@ -1,0 +1,203 @@
+/* style.css */
+body {
+    background-color: #0A0F1C;
+    color: #F3F4F6;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    color: #0A0F1C;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.btn-primary {
+    background-color: #32CD32;
+}
+
+.btn-secondary {
+    background-color: #38BDF8;
+}
+
+.deploy-info {
+    font-size: 14px;
+    color: #F3F4F6;
+}
+
+.hero-visual {
+    width: 50%;
+}
+
+.dashboard-mockup {
+    background-color: #1E293B;
+    border: 1px solid #38BDF8;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.dashboard-header {
+    font-family: 'Fira Code', monospace;
+    font-size: 18px;
+    color: #32CD32;
+    margin-bottom: 20px;
+}
+
+.features-section {
+    padding: 100px 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.live-data-preview {
+    padding: 100px 0;
+}
+
+.live-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.metric-item {
+    background-color: #1E293B;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.use-cases-section {
+    padding: 100px 0;
+}
+
+.use-case-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.use-case-card {
+    background-color: #1E293B;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.use-case-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.pricing-section {
+    padding: 100px 0;
+}
+
+.pricing-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.pricing-plan {
+    background-color: #1E293B;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.pricing-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.integrations-section {
+    padding: 100px 0;
+}
+
+.integration-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    border-top: 1px solid #38BDF8;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #F3F4F6;
+    margin-right: 20px;
+}
+
+.newsletter-form input {
+    background-color: #1E293B;
+    border: 1px solid #38BDF8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    background-color: #32CD32;
+    color: #0A0F1C;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #F3F4F6;
+    margin-left: 20px;
+}
