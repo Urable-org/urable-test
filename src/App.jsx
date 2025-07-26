@@ -24,6 +24,7 @@ const App = () => {
         <Route path="/docs" element={<FAQAccordion />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<WalletIntegration />} />
+        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
     </Router>
   );
