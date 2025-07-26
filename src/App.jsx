@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard';
 import WalletIntegration from './components/WalletIntegration';
 import ThreeDVisuals from './components/ThreeDVisuals';
 import AnimatedBackground from './components/AnimatedBackground';
+import NewComponent from './components/NewComponent';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/docs" element={<FAQAccordion />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<WalletIntegration />} />
+        <Route path="/new-component" element={<NewComponent />} />
       </Routes>
     </Router>
   );
